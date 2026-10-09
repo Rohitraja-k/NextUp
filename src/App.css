@@ -57,3 +57,39 @@
 .retry-btn:hover {
   background: var(--accent-light);
 }
+
+/* =========================
+   RESPONSIVE (MOBILE & TABLET)
+========================= */
+
+@media (max-width: 900px) {
+  .hero-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 4% 40px;
+  }
+
+  .tasks-progress-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 4% 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-row {
+    gap: 20px;
+    padding: 16px 16px 30px;
+  }
+
+  .tasks-progress-row {
+    gap: 20px;
+    padding: 0 16px 30px;
+  }
+
+  .tasks-loading,
+  .tasks-error {
+    padding: 20px;
+    border-radius: 18px;
+  }
+}

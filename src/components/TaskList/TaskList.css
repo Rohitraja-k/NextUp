@@ -158,14 +158,30 @@
 @media (max-width: 500px) {
 
   .task-list {
-    padding: 20px;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .task-title {
+    gap: 12px;
   }
 
   .task-title h2 {
-    font-size: 23px;
+    font-size: 20px;
+  }
+
+  .task-controls {
+    gap: 6px;
   }
 
   .task-controls button {
-    padding: 8px 13px;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .task-controls select {
+    margin-left: 0;
+    padding: 8px 10px;
+    font-size: 13px;
   }
 }

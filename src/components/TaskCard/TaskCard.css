@@ -381,11 +381,39 @@
 
 @media (max-width: 550px) {
 
+  .task-card {
+    padding: 12px 4px;
+    gap: 10px;
+  }
+
   .task-info {
     flex-direction: column;
 
     align-items: flex-start;
 
     gap: 7px;
+  }
+
+  .task-tags {
+    flex-wrap: wrap;
+  }
+
+  .task-card:has(input[type="text"]) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .task-card input[type="text"],
+  .task-card input[type="date"],
+  .task-card select {
+    width: 100%;
+  }
+
+  .task-card .save-btn,
+  .task-card .cancel-btn {
+    width: 100%;
+    text-align: center;
   }
 }

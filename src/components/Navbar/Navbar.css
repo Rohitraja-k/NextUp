@@ -321,3 +321,53 @@
   box-sizing: border-box;
   z-index: 102;
 }
+
+@media (max-width: 600px) {
+  .navbar {
+    max-width: calc(100% - 24px);
+    padding: 0 14px;
+    gap: 20px;
+  }
+
+  .nav-name {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    margin: 12px auto 0;
+    padding: 0 10px;
+    gap: 14px;
+  }
+
+  .navbar-actions {
+    gap: 6px;
+  }
+
+  .notification-panel {
+    position: fixed;
+    top: 72px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar {
+    gap: 8px;
+    padding: 0 8px;
+  }
+
+  .navbar-actions {
+    gap: 4px;
+  }
+
+  .theme-btn,
+  .profile-avatar {
+    width: 30px;
+    height: 30px;
+  }
+}

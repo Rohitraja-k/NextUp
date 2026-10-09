@@ -219,3 +219,58 @@ input:active {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+@media (max-width: 480px) {
+  .add-task-card {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .add-task-header h2 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .add-task-header p {
+    font-size: 13px;
+    margin: 4px 0 0;
+  }
+
+  .task-input-header {
+    gap: 10px;
+  }
+
+  .task-input-header svg {
+    margin-left: 14px !important;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .task-input-header input {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+
+  .task-options {
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .option {
+    padding: 8px 12px;
+  }
+
+  .option svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .option select,
+  .option input,
+  .option button {
+    font-size: 14px;
+    height: 38px;
+  }
+}

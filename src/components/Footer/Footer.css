@@ -130,11 +130,26 @@
 
 @media (max-width: 500px) {
 
+  .footer {
+    padding: 24px 16px;
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+
   .footer-quote {
-    font-size: 12px;
+    font-size: 13px;
+    white-space: normal;
+    text-align: center;
   }
 
   .footer-right {
-    font-size: 12px;
+    font-size: 13px;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .footer-line-right {
+    display: none;
   }
 } 

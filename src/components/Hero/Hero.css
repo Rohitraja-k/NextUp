@@ -58,3 +58,50 @@
   color: #ffffff;
   font-family: var(--sub-font);
 }
+
+/* =========================
+   RESPONSIVE (MOBILE & TABLET)
+========================= */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-content {
+    padding-left: 0;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-content p {
+    width: 100%;
+    max-width: 400px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.75rem;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .moto {
+    gap: 12px;
+  }
+
+  .line {
+    width: 50px;
+  }
+
+  .badge {
+    font-size: 13px;
+  }
+}

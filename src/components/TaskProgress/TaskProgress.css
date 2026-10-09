@@ -339,3 +339,18 @@
     width: 100%;
   }
 }
+
+@media (max-width: 480px) {
+  .task-progress {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .progress-top h2 {
+    font-size: 18px;
+  }
+
+  .progress-stat {
+    padding: 10px 12px;
+  }
+}
