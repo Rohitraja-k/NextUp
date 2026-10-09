@@ -1,0 +1,130 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+
+  font-family: sans-serif;
+
+  transition:
+    background 0.45s ease,
+    color 0.45s ease;
+}
+
+
+/* =========================
+   DARK THEME
+========================= */
+
+:root[data-theme="dark"] {
+
+  --bg: #0b0d0e;
+
+  --surface: #151819;
+
+  --surface-soft: #1b1f20;
+
+  --input: #202426;
+
+  --text: #f4f5f4;
+
+  --text-secondary: #a5aaa7;
+
+  --text-muted: #707674;
+
+  --border: rgba(255, 255, 255, 0.10);
+
+  --border-soft: rgba(255, 255, 255, 0.06);
+
+  --accent: #344238;
+
+  --accent-light: #708776;
+
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   LIGHT THEME
+========================= */
+
+:root[data-theme="light"] {
+
+  --bg: #f3f0e9;
+
+  --surface: rgba(255, 255, 255, 0.72);
+
+  --surface-soft: #ffffff;
+
+  --input: #f8f6f1;
+
+  --text: #17201b;
+
+  --text-secondary: #5e655f;
+
+  --text-muted: #858983;
+
+  --border: rgba(40, 45, 40, 0.10);
+
+  --border-soft: rgba(40, 45, 40, 0.06);
+
+  --accent: #465b4b;
+
+  --accent-light: #687d6d;
+
+  --shadow: rgba(40, 45, 40, 0.08);
+}
+
+
+/* =========================
+   BODY THEME
+========================= */
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+
+/* =========================
+   APP
+========================= */
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  transition:
+    background 0.45s ease,
+    color 0.45s ease;
+}
+
+
+/* =========================
+   FORM ELEMENTS
+========================= */
+
+button,
+input,
+select {
+  font: inherit;
+}

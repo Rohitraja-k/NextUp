@@ -1,0 +1,391 @@
+/* =========================
+   TASK CARD
+========================= */
+
+.task-card {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    42px
+    minmax(0, 1fr)
+    auto
+    auto;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 14px 10px;
+
+  border-bottom:
+    1px solid var(--border-soft);
+
+  color: var(--text);
+
+  transition:
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+
+/* =========================
+   COMPLETE
+========================= */
+
+.complete-btn {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  border: 2px solid var(--text-muted);
+
+  background: transparent;
+
+  color: var(--text);
+
+  cursor: pointer;
+
+  font-size: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+
+.complete-btn.completed {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* =========================
+   TASK INFO
+========================= */
+
+.task-info {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  font-family: var(--sub-font);
+}
+
+
+.task-info h3 {
+  min-width: 0;
+
+  margin: 0;
+
+  font-family: var(--bold-font);
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+.completed-title {
+  text-decoration: line-through;
+
+  opacity: 0.5;
+}
+
+
+/* =========================
+   TAGS
+========================= */
+
+.task-tags {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.category-tag {
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  background: var(--surface-soft);
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+
+.priority-tag {
+  padding: 5px 12px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+
+.priority-tag.high {
+  background: rgba(220, 80, 80, 0.15);
+
+  color: #e57373;
+}
+
+
+.priority-tag.medium {
+  background: rgba(220, 170, 70, 0.15);
+
+  color: #d6a84f;
+}
+
+
+.priority-tag.low {
+  background: rgba(100, 160, 120, 0.15);
+
+  color: #82a88b;
+}
+
+
+/* =========================
+   DATE
+========================= */
+
+.task-date {
+  min-width: 100px;
+
+  font-size: 13px;
+
+  color: var(--text-secondary);
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.task-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+
+.task-actions button {
+  border: none;
+
+  background: transparent;
+
+  color: var(--text-secondary);
+
+  opacity: 0.7;
+
+  cursor: pointer;
+
+  padding: 6px 8px;
+
+  font-size: 13px;
+}
+
+
+.task-actions button:hover {
+  color: var(--text);
+
+  opacity: 1;
+}
+
+
+/* =========================
+   EDIT MODE
+========================= */
+
+.task-card:has(input[type="text"]) {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+}
+
+
+.task-card input,
+.task-card select {
+  height: 42px;
+
+  box-sizing: border-box;
+
+  padding: 0 14px;
+
+  background: var(--input);
+
+  color: var(--text);
+
+  border: 1px solid var(--border);
+
+  border-radius: 10px;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.task-card input[type="text"] {
+  width: 220px;
+}
+
+
+.task-card input[type="date"] {
+  width: 155px;
+
+  color-scheme: dark;
+}
+
+
+:root[data-theme="light"]
+.task-card input[type="date"] {
+  color-scheme: light;
+}
+
+
+.task-card select {
+  width: 125px;
+
+  cursor: pointer;
+}
+
+
+.task-card input:focus,
+.task-card select:focus {
+  border-color: var(--accent-light);
+}
+
+
+.task-card select option {
+  background: var(--input);
+
+  color: var(--text);
+}
+
+
+/* =========================
+   SAVE / CANCEL
+========================= */
+
+.task-card .save-btn,
+.task-card .cancel-btn {
+  padding: 9px 18px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+}
+
+
+.task-card .save-btn {
+  background: var(--accent);
+
+  color: #ffffff;
+
+  border: 1px solid var(--accent);
+}
+
+
+.task-card .cancel-btn {
+  background: transparent;
+
+  color: var(--text-secondary);
+
+  border: 1px solid var(--border);
+}
+
+
+.task-card .save-btn:hover {
+  background: var(--accent-light);
+}
+
+
+.task-card .cancel-btn:hover {
+  color: var(--text);
+
+  border-color: var(--accent-light);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+  .task-card {
+    grid-template-columns:
+      35px
+      minmax(0, 1fr);
+
+    gap: 12px;
+  }
+
+  .task-date {
+    grid-column: 2;
+
+    min-width: auto;
+  }
+
+  .task-actions {
+    grid-column: 2;
+  }
+}
+
+
+@media (max-width: 550px) {
+
+  .task-info {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 7px;
+  }
+}

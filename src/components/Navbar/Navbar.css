@@ -1,0 +1,146 @@
+.navbar {
+  width: fit-content;
+  height: 52px;
+
+  margin: 18px auto 0;
+  padding: 0 10px 0 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 35px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  color: var(--text);
+
+  transition:
+    background 0.4s ease,
+    border-color 0.4s ease,
+    color 0.4s ease;
+}
+
+/* Logo + name */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.nav-logo {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: var(--accent);
+  color: #fff;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.nav-name {
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.nav-name span {
+  color: var(--accent-light);
+}
+
+
+/* Right side */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* Theme button */
+
+.theme-btn {
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+  border: 1px solid var(--border);
+
+  background: transparent;
+  color: var(--text);
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.theme-btn:hover {
+  background: var(--surface-soft);
+  transform: rotate(10deg);
+}
+
+
+/* Profile */
+
+.profile-avatar {
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: 1px solid var(--border);
+
+  background: transparent;
+  color: var(--text);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.25s ease;
+}
+
+.profile-avatar:hover {
+  background: var(--surface-soft);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .nav-name {
+    font-size: 17px;
+  }
+}
