@@ -1,7 +1,11 @@
+
 .add-task-card {
+  width: 100%;
   max-width: 800px;
   height: auto;
   padding: 30px;
+  box-sizing: border-box;
+  min-width: 0;
 
   background: var(--surface);
   backdrop-filter: blur(20px);
@@ -37,15 +41,15 @@
   font-family: var(--sub-font);
 }
 
-
 /* Main task input */
 
 .task-input-header {
-  border-radius: 20px;
+  min-width: 0;
   display: flex;
   align-items: center;
   gap: 20px;
 
+  border-radius: 20px;
   background-color: var(--surface-soft);
   border: 1px solid var(--border);
 
@@ -55,6 +59,7 @@
 }
 
 .task-input-header input {
+  min-width: 0;
   background: none;
   border: none;
   width: 100%;
@@ -64,24 +69,25 @@
   font-size: 16px;
   font-weight: 600;
   font-family: var(--sub-font);
-
   color: var(--text);
 }
-
 
 /* Options */
 
 .task-options {
   display: grid;
-  grid-template-columns: 0.7fr 0.7fr 0.7fr 1.2fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 1.2fr);
   gap: 20px;
   margin-top: 25px;
+  min-width: 0;
 }
 
 .option {
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
+  box-sizing: border-box;
 
   background-color: var(--surface-soft);
   border: 1px solid var(--border);
@@ -93,7 +99,6 @@
     border-color 0.4s ease;
 }
 
-
 /* Select / input / button */
 
 .option select,
@@ -101,6 +106,9 @@
 .option button {
   width: 100%;
   height: 40px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 
   background: none;
   border: none;
@@ -110,13 +118,16 @@
   font-family: var(--sub-font);
 
   text-align: start;
+}
+
+.option select,
+.option input {
   cursor: pointer;
 }
 
 .option input::placeholder {
   color: var(--text-muted);
 }
-
 
 /* Dropdown */
 
@@ -126,8 +137,7 @@
   border: none;
 }
 
-
-/* Remove default focus styles */
+/* Focus styles */
 
 select:focus,
 input:focus,
@@ -138,53 +148,59 @@ input:active {
   box-shadow: none;
 }
 
+/* Add Task button — target by its button element, not child position */
 
-/* Add Task button */
-
-.option:nth-child(4) {
+.task-options .option:has(button) {
   background-color: var(--accent);
   border-color: var(--accent);
 
   transition:
     background 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.3s ease,
+    transform 0.2s ease;
 }
 
-.option:nth-child(4):hover {
+.task-options .option:has(button):hover {
   background-color: var(--accent-light);
   border-color: var(--accent-light);
+  transform: translateY(-2px);
 }
 
-.option button {
+.task-options .option button {
   display: flex;
   align-items: center;
-  gap: 30px;
+  justify-content: center;
+  gap: 10px;
 
+  background: transparent;
   color: #fff;
   font-weight: 700;
+  cursor: pointer;
 }
 
+.task-options .option button p {
+  margin: 0;
+  color: inherit;
+}
 
-/* Date input */
+/* Date inputs */
 
-.option input[type="date"] {
+.option input[type="date"],
+.option input[type="datetime-local"] {
   color: var(--text);
-}
-
-:root[data-theme="dark"] .option input[type="date"] {
   color-scheme: dark;
 }
 
-:root[data-theme="light"] .option input[type="date"] {
+:root[data-theme="light"] .option input[type="date"],
+:root[data-theme="light"] .option input[type="datetime-local"] {
   color-scheme: light;
 }
-
 
 /* Responsive */
 
 @media (max-width: 900px) {
   .task-options {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -200,6 +216,6 @@ input:active {
   }
 
   .task-options {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }

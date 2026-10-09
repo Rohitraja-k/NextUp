@@ -9,6 +9,7 @@ function AddTask({ addTask}){
   const [ category, setCategory ] = useState("Work");
   const [ priority, setPriority ] = useState("Medium");
   const [ date, setDate ] = useState("");
+  const [reminderAt, setReminderAt] = useState("");
 
 const handleSubmit = (e) => {
   e.preventDefault();
@@ -20,6 +21,7 @@ const handleSubmit = (e) => {
     category,
     priority,
     date,
+    reminderAt: reminderAt ? new Date(reminderAt).toISOString() : null,
     completed: false
   };
 
@@ -30,6 +32,7 @@ const handleSubmit = (e) => {
   setCategory("Work");
   setPriority("Medium");
   setDate("");
+  setReminderAt("");
 };
 
   return(
@@ -64,6 +67,20 @@ const handleSubmit = (e) => {
           className="calendar"/>
         
         </div>
+
+        
+        <div className="option">
+          <Calendar size={25} />
+          <input
+            type="datetime-local"
+            value={reminderAt}
+            onChange={(e) => setReminderAt(e.target.value)}
+            className="calendar"
+            aria-label="Reminder date and time"
+          />
+        </div>
+
+
         <div className="option">
           <Flag size={25}/>
           <select name="Priority"
